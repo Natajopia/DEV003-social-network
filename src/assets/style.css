@@ -1,119 +1,285 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-  * {
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;  
-    }
-    
-    .container{
-        background-image: url(imagenes/ciudad2.jpeg);
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .divLogo {
-        width: 100%;
-        height: 25%;
-        background-color: #fff;
-        border-radius: 0 0 50% 50%;
-        justify-content: center;
-        align-items: center;
-    }
+/*Inicio estilos general de la página (todas las vistas) */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
 
-    .logo {
-        margin: 0px 15px 50px 80px;
- 
-    }
-    
-    .buttonWelcome{
-        width: 100px;
-        height: 50px;
-        background-color: #49BF9E;
-        border-radius: 20px;
-        margin-top: 80px;
-        margin-bottom: 50px;
-        margin-left: 130px;
-        margin-right: 100px;
-
-    }
-    
-
-.divtexto{
+.divLogo {
     width: 100%;
-    background: none;
+    height: 25%;
+    background-color: #fff;
+    border-radius: 0 0 50% 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.logo {
+    margin: 0px 15px 50px 80px;
+    position: relative;
+
+}
+
+
+body {
+    margin: 0;
+    background-color: #F2BC57;
+    
+}
+
+footer {
+    /*justify-content:end;
+    position: relative;*/
+    width: 400px;
+    background-color: #49BF9E;
+    color: black;
+    text-align: center;
+    margin: 0rem 0;
+    
+}
+
+ 
+/*Inicio estilos de vista welcome*/
+.container {
+    background-image: url(imagenes/ciudad2.jpeg);
+    background-size: cover;
+    background-position: relative;
+    width: 100%;
+    height: 600%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.container:before{
+    content: '';
+    width: 100%;
+    height: 105%;
+    background-color: #fff;
+    position: absolute;
+    opacity: 0.3;
+}
+
+
+.divtexto {
+    width: 98%;
     text-align: center;
     margin-top: 100px;
-    padding: 0px 20px 50px 30px; 
-    
+    padding: 20px 20px 50px 5px;
+    position: relative;
+  
+
 }
 
-.textW{
-    background-color: #F2BC57;
+.textW {
+    width: 80%;
+    height: 55%;
+    background-color: rgba(242, 188, 87, 75%);
     border-radius: 20%;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 60px;
     padding-bottom: 5px;
+    margin: 50px 40px;
+    position: relative;
+    color: black;
+  
 }
+
+
+.buttonWelcome {
+    width: 100px;
+    height: 50px;
+    background: #49BF9E;
+    border-radius: 20px;
+    border-color: #F2BC57;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-left: 110px;
+    margin-right: 100px;
+    cursor: pointer;
+    position: relative;
+    color: black;
+    font-size: medium;
+   
+}
+
+/*Inicio estilos vista login*/
 
 .divContainer {
-        background-color: #F2BC57;
-
-    }
-
-.divLogin{
-        background-color: #F2BC57;
-    }
-
-    /*.container{
-        background-color: azure;
-        width: 85%;
-        height: 600px;
-        margin: auto; 
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
 
     
-
-    .textW {
-        width: 300px;
-        height:300px;
-        font-size: 1.2em;
-        line-height: 1.5;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 1em 25em;
-        background-color: #509c87;
-        padding: 10px 20px;
-        border: 1px solid #ddd;
-
-    }
-
-    .buttonWelcome {
-        margin-top: 40px ;
-    }
-
-
-
-.logo{
-    width: 400px;
-    height: 400px;
+    background-color: #F2BC57;
+  
 }
 
-.divlogo {
-    background-color:#d11b1b;
-    width: 30px;
-    height: 300px;
+.divHeader {
+    background-color: #F2BC57;
 }
+/*.divHeader {
+     
+    background-color: aliceblue;
 
- .divContainer{
-background-color: bisque;
+    width: 300px;
+    height: 250px;
+    border-radius: 20px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    margin-left: 60px;
+    margin-right: 60px;
+    
 }*/
+
+.divForm {
+    
+    width: 90%;
+    background-color: #49BF9E;
+    margin: 1rem 1rem;
+    justify-content: center;
+    border-radius: 1rem;
+   
+}
+
+.form {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 1rem; 
+    padding: 1rem 0.8rem ;
+    gap: 1rem;
+
+   
+}
+
+.input {
+    border-radius: 0.3rem;
+    padding: 0.8rem 1rem; 
+    margin: 1rem 5rem;
+    justify-content: center;
+}
+
+.label{
+    padding: 0rem 0.5rem; 
+    margin: 0rem 1rem;
+   justify-content: center;
+}
+
+/*.divGmail {
+    position: relative;
+    /*display: block;
+}*/
+
+
+.button {
+    justify-content: center;
+    border-radius: 0.8rem;
+    margin: 1rem 10rem;
+    padding: 0.7rem;
+    
+
+}
+
+.logIn{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.buttonLo{
+    justify-content: center;
+    border-radius: 2rem;
+    margin: 1rem 1rem;
+    padding: 0.7rem;
+    
+}
+
+.google {
+    align-items: center;
+    margin: 1rem 5.5rem;
+    padding: 0.7rem;
+    
+}
+
+.register {
+    align-items: center;
+    margin: 0 5rem;
+    padding: 0.5rem;
+}
+.signUp {
+    align-content: center;
+    text-decoration: underline;
+    color: #381E40;
+    margin: 0 8.5rem;
+    padding: 0 0.8rem;
+    
+}
+
+/*Inicio estilos vista register*/
+
+.divRegister{
+    
+    align-content: center;
+}
+
+/*********Inicio estilos vista wall*****************/
+.title {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 2rem 0;
+    
+    
+}
+
+.post{
+    border-radius: 0.5rem;
+    padding: 4rem 3rem; 
+    margin: 0 5rem;
+    justify-content: center;
+}
+
+.buttonLogout{
+    padding: 0.5rem 1rem; 
+    margin: 2rem 19rem;
+}
+
+
+.show-data {
+    font-size: large;
+    font-style: italic;
+    background-color:#49BF9E;
+    text-align: left;
+    border-radius: 0.5rem;
+    padding: 1rem 1rem; 
+    margin: 1rem 1rem;
+    justify-content: center;
+    /*align-items: center;
+   margin: 1rem 6rem;
+    padding: 1rem 3rem;*/
+
+}
+
+.comment-post {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 4rem 4em; 
+    margin: 2 4rem;
+    justify-content: center;
+}
+
+.btn {
+    text-align: center;
+    border-radius: 1rem;
+    margin: 0rem 5rem;
+    padding: 0.7rem;
+}
+
+@media (min-width:600px) and (max-width:1200px){
+
+    body{
+        background-color: red;
+
+    }
+}

@@ -15,7 +15,7 @@ export const Welcome = (onNavigate) => {
 
   logo.src = '../assets/imagenes/citi-pq.png';
   textW.textContent = 'Has llegado al mejor lugar para informarte de los principales eventos de tu ciudad';
-  buttonWelcome.textContent = 'HOLA';
+  buttonWelcome.textContent = 'HOLA :)';
 
   divLogo.appendChild(logo);
   textW.appendChild(buttonWelcome);

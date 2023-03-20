@@ -1,4 +1,4 @@
-// import Toastify from 'toastify-js';
+import Toastify from 'toastify-js';
 // estas son las constantes para poder interactuar con la API que va a permitir
 // consumir los datos a la SPA (esto es lo que necesitamos consultar)
 // message es lo que se va a mostrar y type es para que determine si es un error

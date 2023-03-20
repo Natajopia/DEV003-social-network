@@ -3,35 +3,72 @@ import {
   onAuthStateChanged,
   sendEmailVerification,
   signInWithEmailAndPassword,
-  signInWithRedirect,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+  updateProfile,
 } from 'firebase/auth';
 
-import { auth, provider } from './config.js';
+import {
+  addDoc, collection, serverTimestamp, query, getDocs, onSnapshot, deleteDoc, doc, orderBy,
+} from 'firebase/firestore';
+import { auth, db } from './config.js';
 
-// Función para registrarse
+// ---- Función para registrarse ----------
 // auth es la configuración del Firebase, también le paso email y password que autenticaré
 export function registerUser(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
 }
 
+// -------- Función para mostrar el display name---------------
+export const showName = (name) => updateProfile(auth.currentUser, {
+  displayName: name,
+});
+
 export const sendEmail = () => sendEmailVerification(auth.currentUser);
 // export const emailVerification = () => isSignInWithEmailLink(auth, window.location.href);
 
-// Función para iniciar sesión
+// ------------ Función para iniciar sesión ------------
 export const loginEmail = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
-// Función para obtener usuario con sesión activa
+// Iniciar sesión con google
+export const provider = new GoogleAuthProvider();
+export const authGoogle = () => signInWithPopup(auth, provider);
+
+// ------ Función para obtener usuario con sesión activa ------------
 export const authUser = onAuthStateChanged(auth, (user) => {
   if (user) {
-    // onNavigate('/wall');
     const uid = user.uid;
-    console.log(uid);
+    console.log('Usuario logueado', uid);
   } else {
-    console.log('nada');
+    console.log('No hay usuario logueado');
     // onNavigate('/');
   }
 });
 
-export const authGoogle = () => signInWithRedirect(auth, provider);
+// --------- Función para cerrar sesión ---------------
+export const logout = () => signOut(auth);
 
-// export const logout = () => sendEmailVerification(auth);
+// -------------- Funcion para crear post --------------------
+export const createPost = (comment) => addDoc(collection(db, 'posts'), {
+  name: auth.currentUser.displayName,
+  comment,
+  timestamp: serverTimestamp(),
+  uid: auth.currentUser.uid,
+});
+
+// ------ Función para mostrar los post en la consola----------
+export const querySnapshot = () => getDocs(collection(db, 'posts'));
+
+// -----------Función para imprimir los post-----------
+const q = query(collection(db, 'posts'), orderBy('timestamp', 'desc'));
+
+export const print = (comment) => onSnapshot(q, comment);
+
+// ---------- Función para eliminar post-----------
+export const deletePost = (id) => {
+  deleteDoc(doc(db, 'posts', id));
+};
+
+// ------------Función para obtener el usuario---------
+export const getCurrentUser = () => auth.currentUser;

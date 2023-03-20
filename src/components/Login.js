@@ -19,8 +19,9 @@ export const Login = (onNavigate) => {
   const buttonLogin = document.createElement('button');
   const divGmail = document.createElement('div');
   const buttonGoogle = document.createElement('img');
+  const logIn = document.createElement('h2');
   const register = document.createElement('p');
-  const registerhref = document.createElement('a');
+  const registerhref = document.createElement('h3');
 
   // Asignando clases
   divContainer.classList.add('divContainer');
@@ -29,17 +30,23 @@ export const Login = (onNavigate) => {
   logo.classList.add('logo');
   divForm.classList.add('divForm');
   // divLogin.classList.add('divLogin');
-  labelEmail.classList.add('labelEmail');
-  labelPassword.classList.add('labelPassword');
-  buttonLogin.classList.add('buttonLogin');
+  form.classList.add('form');
+  labelEmail.classList.add('label');
+  inputEmail.classList.add('input');
+  labelPassword.classList.add('label');
+  inputPassword.classList.add('input');
+  buttonLogin.classList.add('buttonLo');
   divGmail.classList.add('divGmail');
   buttonGoogle.classList.add('google');
   register.classList.add('register');
+  registerhref.classList.add('signUp');
+  logIn.classList.add('logIn');
 
   // Dando contenido a los elementos
-  divHeader.appendChild(logo);
+
   logo.src = '../assets/imagenes/citi-pq.png';
   buttonGoogle.src = '../assets/imagenes/google_1x.png';
+  logIn.textContent = 'Inicia sesión';
   inputEmail.type = 'email';
   labelEmail.textContent = 'Email';
   inputEmail.placeholder = 'usuario@usuario.com';
@@ -53,10 +60,11 @@ export const Login = (onNavigate) => {
   registerhref.textContent = 'Regístrate';
 
   // Asignando padres e hijos
-  divHeader.appendChild(logo);
+  divLogo.appendChild(logo);
+  divHeader.appendChild(divLogo);
   divForm.appendChild(form);
-  form.append(labelEmail, inputEmail, labelPassword, inputPassword, buttonLogin);
-  divContainer.append(divLogo, divHeader, divForm, buttonGoogle, register, registerhref);
+  form.append(divHeader, labelEmail, inputEmail, labelPassword, inputPassword, buttonLogin);
+  divContainer.append(divLogo, logIn, divForm, buttonGoogle, register, registerhref);
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -124,6 +132,7 @@ export const Login = (onNavigate) => {
         // The signed-in user info.
         const user = result.user;
         console.log(user);
+        onNavigate('/wall');
         // ...
         // return authUserGoogle;
       }).catch((error) => {

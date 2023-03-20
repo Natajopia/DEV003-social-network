@@ -1,6 +1,6 @@
 import Toastify from 'toastify-js';
 // import { showMessage } from '../helpers/fb_api.js';
-import { registerUser, sendEmail } from '../lib/service.js';
+import { registerUser, sendEmail, showName } from '../lib/service.js';
 
 export const Register = (onNavigate) => {
   // Creando estructura
@@ -20,7 +20,13 @@ export const Register = (onNavigate) => {
   logo.classList.add('logo');
   divLogo.classList.add('divLogo');
   divRegister.classList.add('divRegister');
-  buttonRegister.classList.add('buttonRegister');
+  divForm.classList.add('divForm');
+  buttonRegister.classList.add('button');
+  inputName.classList.add('input');
+  inputEmail.classList.add('input');
+  inputPassword.classList.add('input');
+  inputRePassword.classList.add('input');
+  title.classList.add('title');
 
   // Dando contenido a los elementos
   logo.src = '../assets/imagenes/citi-pq.png';
@@ -67,39 +73,27 @@ export const Register = (onNavigate) => {
         },
       }).showToast();
     } else if (nameValue && emailValue && passwordValue && repeatPassValue) {
-      sendEmail()
-        .then(() => {
-          Toastify({
-            text: 'Verifica tu email',
-            duration: 2000,
-            style: {
-              background: 'linear-gradient(to right, #F2BC57, #F24495)',
-            },
-          }).showToast();
-          // console.log(res);
-          // alert('Verifica tu email');
-          onNavigate('/login');
-        }).catch(console.log);
-
       registerUser(emailValue, passwordValue)
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
+          sendEmail()
+            .then(() => {
+              showName(nameValue)
+                .then(() => {
+                  Toastify({
+                    text: 'Verifica tu email',
+                    duration: 2000,
+                    style: {
+                      background: 'linear-gradient(to right, #F2BC57, #F24495)',
+                    },
+                  }).showToast();
+                  onNavigate('/login');
+                });
+            });
         })
-        // .then(() => {
-        //   onNavigate('/wall');
-        // })
         .catch((error) => {
           const errorCode = error.code;
-          // console.log(errorCode);
-          // switch (errorCode) {
-          //   case 'auth/invalid-email':
-          //     console.log('Email inválido');
-          //     break;
-          //   case 'auth/email-already-exists':
-          //     console.log('El correo ya existe');
-          //     break;
-          // }
           if (errorCode === 'auth/invalid-email') {
             Toastify({
               text: 'Email inválido',

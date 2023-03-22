@@ -21,7 +21,7 @@ export const Register = (onNavigate) => {
   divLogo.classList.add('divLogo');
   divRegister.classList.add('divRegister');
   divForm.classList.add('divForm');
-  buttonRegister.classList.add('button');
+  buttonRegister.classList.add('buttonRe');
   inputName.classList.add('input');
   inputEmail.classList.add('input');
   inputPassword.classList.add('input');
@@ -55,7 +55,6 @@ export const Register = (onNavigate) => {
     const passwordValue = inputPassword.value;
     const repeatPassValue = inputRePassword.value;
     // console.log(nameValue, emailValue, passwordValue, repeatPassValue);
-
     if (nameValue === '') {
       Toastify({
         text: 'Ingresa un usuario',

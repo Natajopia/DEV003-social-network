@@ -31,6 +31,7 @@ export const Login = (onNavigate) => {
   divForm.classList.add('divForm');
   // divLogin.classList.add('divLogin');
   form.classList.add('form');
+  form.setAttribute('data-testid', 'loginForm');
   labelEmail.classList.add('label');
   inputEmail.classList.add('input');
   labelPassword.classList.add('label');

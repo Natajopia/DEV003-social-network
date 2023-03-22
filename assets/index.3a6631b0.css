@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/*Inicio estilos general de la página (todas las vistas) */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.divLogo {
+    width: 100%;
+    /* height: 25%; */
+    background-color: #fff;
+    border-radius: 0 0 50% 50%;
+    justify-content: center; 
+    /* align-items: center; */
+    display: flex;
+
+}
+
+.logo {
+  /* margin: 0px 15px 50px 80px; */
+  width: auto;
+
+}
+
+body {
+    margin: 0;
+    background-color: #F2BC57;
+    overflow-x: hidden;
+    
+}
+
+footer {
+    /*justify-content:end;
+    position: relative;*/
+    width: 400px;
+    background-color: #49BF9E;
+    color: black;
+    text-align: center;
+    margin: 0rem 0;
+    
+}
+
+/*Inicio estilos de vista welcome*/
+
+.container {
+    background-image: url(/assets/ciudad2.1bfca9c0.jpeg);
+    background-size: cover;
+    background-position: relative;
+    width: 100%;
+    height: 600%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.container:before{
+    content: '';
+    width: 100%;
+    height: 105%;
+    background-color: #fff;
+    position: absolute;
+    opacity: 0.3;
+}
+
+.divtexto {
+    width: 98%;
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px 20px 50px 5px;
+    position: relative;
+  
+
+}
+
+.textW {
+    width: 80%;
+    height: 55%;
+    background-color: rgba(242, 188, 87, 75%);
+    border-radius: 20%;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 5px;
+    margin: 50px 40px;
+    position: relative;
+    color: black;
+  
+}
+
+.buttonWelcome {
+    width: 100px;
+    height: 50px;
+    background: #49BF9E;
+    border-radius: 20px;
+    border-color: #F2BC57;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-left: 110px;
+    margin-right: 100px;
+    cursor: pointer;
+    position: relative;
+    color: black;
+    font-size: medium;
+   
+}
+
+/*Inicio estilos vista login*/
+
+.divContainer {
+
+    
+    background-color: #F2BC57;
+  
+}
+
+.divHeader {
+    background-color: #F2BC57;
+}
+
+/*.divHeader {
+     
+    background-color: aliceblue;
+
+    width: 300px;
+    height: 250px;
+    border-radius: 20px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    margin-left: 60px;
+    margin-right: 60px;
+    
+}*/
+
+.divForm {
+    
+    width: 90%;
+    background-color: #49BF9E;
+    margin: 1rem 1rem;
+    justify-content: center;
+    border-radius: 1rem;
+   
+}
+
+.form {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 1rem; 
+    padding: 1rem 0.8rem ;
+    gap: 1rem;
+
+   
+}
+
+.input {
+    border-radius: 0.3rem;
+    padding: 0.8rem 1rem; 
+    margin: 1rem 5rem;
+    justify-content: center;
+}
+
+.label{
+    padding: 0rem 0.5rem; 
+    margin: 0rem 1rem;
+   justify-content: center;
+}
+
+/*.divGmail {
+    position: relative;
+    /*display: block;
+}*/
+
+.button {
+    justify-content: center;
+    border-radius: 0.8rem;
+    margin: 1rem 10rem;
+    padding: 0.7rem;
+    
+
+}
+
+.buttonRe {
+    justify-content: center;
+    border-radius: 0.8rem;
+    margin: 1rem 10rem;
+    padding: 0.7rem;
+    
+
+}
+
+.logIn{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.buttonLo{
+    justify-content: center;
+    border-radius: 2rem;
+    margin: 1rem 1rem;
+    padding: 0.7rem;
+    
+}
+
+.google {
+    align-items: center;
+    margin: 1rem 5.5rem;
+    padding: 0.7rem;
+    
+}
+
+.register {
+    align-items: center;
+    margin: 0 5rem;
+    padding: 0.5rem;
+}
+
+.signUp {
+    align-content: center;
+    text-decoration: underline;
+    color: #381E40;
+    margin: 0 8.5rem;
+    padding: 0 0.8rem;
+    
+}
+
+/*Inicio estilos vista register*/
+
+.divRegister{
+    
+    align-content: center;
+}
+
+/*********Inicio estilos vista wall*****************/
+
+.title {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 2rem 0;
+    
+    
+}
+
+.post{
+    border-radius: 0.5rem;
+    padding: 4rem 3rem; 
+    margin: 0 5rem;
+    justify-content: center;
+}
+
+.buttonLogout{
+    padding: 0.5rem 1rem; 
+    margin: 2rem 19rem;
+}
+
+.show-data {
+    font-size: large;
+    font-style: italic;
+    background-color:#49BF9E;
+    text-align: left;
+    border-radius: 0.5rem;
+    padding: 1rem 1rem; 
+    margin: 1rem 1rem;
+    justify-content: center;
+    /*align-items: center;
+   margin: 1rem 6rem;
+    padding: 1rem 3rem;*/
+
+}
+
+.comment-post {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 4rem 4em; 
+    margin: 0 4rem;
+    justify-content: center;
+}
+
+.btn {
+    text-align: center;
+    border-radius: 1rem;
+    margin: 0rem 5rem;
+    padding: 0.7rem;
+}
+
+@media (min-width:768px) {
+
+    footer {
+        height: 3rem;
+        background-color: #49BF9E;
+        color: black;
+        text-align: center;
+        padding: 0rem 40rem;
+
+    }
+
+    .divShowPost {
+        width: 80%;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 10%;
+
+    }
+
+    .show-data {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+
+    .divLogo {
+        width: 100%;
+        height: 5%;
+        background-color: #fff;
+        /* justify-content: center; */
+        /* align-items: center; */
+      
+    } 
+
+    .buttonLogout{
+        margin: 2rem 80rem;
+    }
+
+    .post{
+        border-radius: 0.8rem;
+        padding: 4rem 3rem; 
+        margin: 0 40rem;
+    }
+    
+    .button {
+        border-radius: 0.8rem;
+        margin: 1rem 46rem;
+        padding: 0.7rem;
+        
+    }
+
+    .title {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        margin: 5rem 2rem 2rem 2rem;
+    }
+
+    .textW {
+        width: 70%;
+        height: 50%;
+        background-color: rgba(242, 188, 87, 75%);
+        border-radius: 2rem;
+        text-align: center;
+        margin: 4rem 18rem;
+        color: black;
+      
+    }
+    
+    .divForm {
+    
+        width: 50%;
+        background-color: #49BF9E;
+        margin: 1rem 25rem;
+        border-radius: 1rem;
+    
+    }
+
+    .google {
+        align-items: center;
+        margin: 1rem 42rem;
+   
+    }
+    .register {
+        margin: 1rem 40rem;  
+        align-items: center;
+        display: inline;
+    }
+
+    .signUp {
+        text-decoration: underline;
+        color: #381E40;
+        margin: 1rem 45rem;
+    }
+    .buttonRe {
+        border-radius: 0.8rem;
+        margin: 1rem 20rem;
+        padding: 0.7rem;
+        
+    
+    }
+
+    .input {
+        border-radius: 0.3rem;
+        padding: 1rem 8rem; 
+        margin: 1rem 12rem;
+        
+    }
+
+};

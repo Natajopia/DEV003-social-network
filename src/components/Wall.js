@@ -25,6 +25,7 @@ export const Wall = (onNavigate) => {
   buttonPublish.classList.add('button');
   buttonLogout.classList.add('buttonLogout');
   title.classList.add('title');
+  divShowPost.classList.add('divShowPost');
 
   // Dando contenido a los elementos
   logo.src = '../assets/imagenes/citi-pq.png';
